@@ -52,7 +52,7 @@ pipeline {
             }
             steps {
                 bat '''
-              sonar-scanner.bat -D"sonar.projectKey=codecoverage" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_a4cbb9c619310959c3c216726b6502a7f5ad710e"             
+              sonar-scanner.bat -D"sonar.projectKey=codecoverage" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_dd50adad4792292923350dddbc2aad2e0481d6c2"            
                 '''
             }
         }
