@@ -48,11 +48,12 @@ pipeline {
 
         stage('SonarQube Analysis') {
             environment {
-                SONAR_TOKEN = credentials('coverage_token') // Accessing the SonarQube token stored in Jenkins credentials
+                SONAR_TOKEN = credentials('coverage_token') // Accessing SonarQube token stored in Jenkins
             }
             steps {
                 bat '''
-              sonar-scanner.bat -D"sonar.projectKey=codecoverage" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_dd50adad4792292923350dddbc2aad2e0481d6c2"            
+                set PATH=C:\\Users\\Kavyashree\\Downloads\\sonar-scanner-cli-6.2.1.4610-windows-x64 (1)\\sonar-scanner-6.2.1.4610-windows-x64\\bin;%PATH%
+                sonar-scanner.bat -D"sonar.projectKey=codecoverage" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=%SONAR_TOKEN%"
                 '''
             }
         }
