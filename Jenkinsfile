@@ -14,6 +14,7 @@ pipeline {
             steps {
                 bat '''
                 set PATH=%PYTHON_PATH%;%PATH%
+                pip install coverage || exit /b 1
                 pip show coverage
                 '''
             }
